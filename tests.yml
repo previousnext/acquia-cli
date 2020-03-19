@@ -1,0 +1,7 @@
+schemaVersion: '2.0.0'
+
+fileExistenceTests:
+  - name: 'Binary Exists'
+    path: '/usr/local/bin/acquia-cli'
+    shouldExist: true
+    permissions: '-rwxr-xr-x'
