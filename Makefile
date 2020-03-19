@@ -25,14 +25,9 @@ test:
 IMAGE=${PROJECT}
 
 # Releases the project Docker Hub.
-release-docker:
+release:
 	docker build -t ${IMAGE}:${VERSION} -t ${IMAGE}:latest .
 	docker push ${IMAGE}:${VERSION}
 	docker push ${IMAGE}:latest
-
-release-github: build
-	ghr -u previousnext "${VERSION}" ./bin/
-
-release: release-docker release-github
 
 .PHONY: *
